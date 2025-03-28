@@ -14,7 +14,7 @@ public class Frogger {
     public boolean move(boolean forward) {
         int nextPosition = this.position + (forward ? 1 : -1);
         if (!road.isValidPosition(nextPosition) || road.isPositionOccupied(nextPosition)) {
-            return false;
+            return true;
         }
         this.position = nextPosition;
         return true;
