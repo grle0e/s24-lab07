@@ -8,11 +8,15 @@ package frogger;
 public class Road {
     private final boolean[] occupied;
 
-    public Road(boolean[] occupied) {
-        this.occupied = occupied;
+    public Road(int length) {
+        this.occupied = new boolean[length];
     }
 
-    public boolean[] getOccupied() {
-        return this.occupied;
+    public boolean isPositionOccupied(int position) {
+        return position >= 0 && position < occupied.length && occupied[position];
+    }
+
+    public boolean isValidPosition(int position) {
+        return position >= 0 && position < occupied.length;
     }
 }
